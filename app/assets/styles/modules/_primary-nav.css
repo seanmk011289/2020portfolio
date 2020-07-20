@@ -1,0 +1,28 @@
+.primary-nav {
+    padding:0.5rem 0 0 0;
+    
+    &__pull-right {
+        float:right;
+    }
+
+    ul > li > &__last-link {
+        color:$mainGreen;
+        font-weight:500;
+    }
+
+    ul {
+        list-style:none;
+    }
+
+    li {
+        margin-right:2rem;
+        float:left;
+    }
+
+    a {
+        text-decoration:none;
+        font-family:$paragraphFont;
+        font-weight:100;
+        color:#5b5b5b;
+    }
+}
