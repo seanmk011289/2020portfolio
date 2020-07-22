@@ -1,0 +1,43 @@
+.my-work-section {
+    background:#1e1e1e;
+    position:relative;
+
+    &__title {
+        color:white;
+        font-size: 3.2rem;
+        position:relative;
+        z-index:2;
+        margin-bottom:0;
+
+        &-green {
+            color:$mainGreen;
+        }
+    }
+
+    &__subtitle {
+        color:white;
+        font-size: 1.2rem;
+        position:relative;
+        z-index:2;
+        font-family:$paragraphFont;
+        font-weight:100;
+        line-height:2.2rem;
+        max-width:700px;
+    }
+
+    &__left-svg {
+        width:450px;
+        position:absolute;
+        top:100px;
+    }
+
+    &__right-svg {
+        width:250px;
+        z-index:1;
+        opacity:0.5;
+        position:absolute;
+        right:0;
+        top:200px
+  
+    }
+}

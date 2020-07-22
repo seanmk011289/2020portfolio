@@ -4,15 +4,22 @@
     font-family:$headingFont;
     text-transform:uppercase;
     font-weight:900;
+    padding: 15px 40px;
 
     &--primary {
-        background:#53c48b;
-        padding: 15px 40px;
+        background:$mainGreen;
         border:none;
         color:white;
         letter-spacing:1px;
         transition: box-shadow .25s ease, transform .25s ease;
        
+    }
+
+    &--secondary {
+        background:none;
+        border: 4px solid $mainGreen;
+        color:white;
+        margin-top:20px;
     }
 
     &--hover-lg-shadow {
