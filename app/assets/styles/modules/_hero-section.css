@@ -5,7 +5,7 @@
     position:relative;
     overflow:hidden;
     width:100%;
-    height:95vh;
+
 
     &__top-svg {
         width:150px;
@@ -91,7 +91,7 @@
         position:absolute;
         bottom:0;
         left:0;
-        width:4500px;
+        width:3500px;
         z-index:1;
     }
 }

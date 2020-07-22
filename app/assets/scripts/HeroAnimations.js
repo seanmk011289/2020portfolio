@@ -28,6 +28,10 @@ class HeroAnimations {
                 this.removeHeroScale();
             })
 
+            window.addEventListener("scroll", () => {
+                this.scrollCurves();
+            })
+
         }
 
         addShadow() {
@@ -48,6 +52,11 @@ class HeroAnimations {
             this.heroTopSVGtop.classList.remove('hero-section__top-svg-top-animate');
             this.heroTopSVGmid.classList.remove('hero-section__top-svg-middle-animate');
             this.heroTopSVGbot.classList.remove('hero-section__top-svg-bottom-animate');
+        }
+
+        scrollCurves(e) {
+            let move = window.pageYOffset;
+            this.heroCurves.style.transform = `translatex(-${move}px)`;
         }
         
 }
