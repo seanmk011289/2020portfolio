@@ -32,7 +32,7 @@
 
         @mixin atLarge {
             position:absolute;
-            top:90px;
+            top:110px;
            transform:translateX(40px);
            display:inline-block;
         }

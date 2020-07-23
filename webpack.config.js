@@ -31,7 +31,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader?url=false', {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
+                use: ['style-loader', 'css-loader?url=false',  {loader: 'postcss-loader', options: {plugins: postCSSPlugins}}]
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }

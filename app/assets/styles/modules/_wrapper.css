@@ -24,7 +24,11 @@
     }
 
     &--padding-lg {
-        padding: 5rem 3.5rem;
+        padding: 5rem 1.5rem;
+
+        @mixin atSmall {
+            padding: 5rem 3.5rem;
+        }
 
         @mixin atMedium {
             padding: 10rem 0;
@@ -33,6 +37,12 @@
 
     &--padding-med {
         padding: 6rem 0;
+
+        &-side {
+            padding: 6rem 2rem;
+            position:relative;
+            z-index:2;
+        }
     }
 
     &--relative {
