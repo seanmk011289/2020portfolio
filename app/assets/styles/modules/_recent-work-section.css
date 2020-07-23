@@ -1,0 +1,26 @@
+.recent-work-section {
+    text-align:center;
+
+    &__svg {
+        width:35px;
+        padding-right:5px;
+    }
+
+    &__title {
+        font-size:3.6rem;
+        letter-spacing:-2px;
+        margin-bottom:20px;
+    }
+
+    &__subtitle {
+        font-weight:100;
+        line-height:2rem;
+        margin:0 auto;
+        
+        @mixin atMedium {
+            font-size:1.2rem;
+            max-width:700px;
+        }
+    }
+
+}

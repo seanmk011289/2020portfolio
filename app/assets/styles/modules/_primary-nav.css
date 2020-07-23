@@ -24,5 +24,10 @@
         font-family:$paragraphFont;
         font-weight:100;
         color:#5b5b5b;
+        font-size:0.8rem;
+
+        @mixin atMedium {
+            font-size:1rem;
+        }
     }
 }

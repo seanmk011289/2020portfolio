@@ -5,14 +5,38 @@
         padding-bottom:100px;
     }
 
+    &--mw-875 {
+        max-width:875px;
+        margin:0 auto;
+        position:relative;
+    }
+
     &--mw-1000 {
         max-width:1000px;
         margin:0 auto;
         position:relative;
     }
 
+    &--mw-1300 {
+        max-width:1300px;
+        margin:0 auto;
+        position:relative;
+    }
+
     &--padding-lg {
-        padding: 10rem 0 10rem 0;
+        padding: 5rem 3.5rem;
+
+        @mixin atMedium {
+            padding: 10rem 0;
+        }
+    }
+
+    &--padding-med {
+        padding: 6rem 0;
+    }
+
+    &--relative {
+        position:relative;
     }
 
 }

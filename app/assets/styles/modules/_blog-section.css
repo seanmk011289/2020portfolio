@@ -1,0 +1,42 @@
+.blog-section {
+    
+    background-color:#1e1e1e;
+    color:white;
+
+    &__svg {
+        width:200px;
+    }
+
+    &__title {
+        font-size:3.4rem;
+        margin:10px 0;
+        letter-spacing:-1px;
+
+        &-green {
+            color: $mainGreen;
+        }
+    }
+
+    &__subtitle {
+        font-weight:100;
+
+
+        @mixin atMedium {
+            font-size:1.2rem;
+            line-height:2rem;
+        }
+    }
+
+    &__guide {
+        display:none;
+
+        @mixin atLarge {
+            position:absolute;
+            top:90px;
+           transform:translateX(40px);
+           display:inline-block;
+        }
+       
+    }
+
+}
