@@ -3,8 +3,14 @@
     margin:0;
 
     &__title {
-        font-size:3rem;
+        font-size:2.5rem;
         margin-bottom:20px;
+        line-height:2.8rem;
+
+        @mixin atMedium {
+            font-size:3rem;
+            line-height:4rem;
+        }
 
         &-green {
             color:$mainGreen;
@@ -13,7 +19,7 @@
 
     &__p1 {
         font-weight:100;
-        line-height:1.6rem;
+        line-height:1.8rem;
         max-width:800px;
     }
 
@@ -29,7 +35,7 @@
 
     &__p2 {
         font-weight:100;
-        line-height:1.6rem;
+        line-height:1.8rem;
         max-width:700px;
 
 
