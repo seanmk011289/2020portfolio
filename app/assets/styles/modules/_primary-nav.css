@@ -3,6 +3,8 @@
     
     &__pull-right {
         float:right;
+      
+        
     }
 
     ul > li > &__last-link {
@@ -12,6 +14,7 @@
 
     ul {
         list-style:none;
+        @mixin clearFix;
     }
 
     li {
@@ -24,10 +27,10 @@
         font-family:$paragraphFont;
         font-weight:100;
         color:#5b5b5b;
-        font-size:0.8rem;
+        font-size:0.7rem;
 
         @mixin atMedium {
-            font-size:1rem;
+            font-size:0.8rem;
         }
     }
 }

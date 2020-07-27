@@ -11,4 +11,10 @@
 @import 'modules/_recent-work-section';
 @import 'modules/_blog-section';
 @import 'modules/_cta-section';
+@import 'modules/_resume-hero';
+@import 'modules/_about-section';
+@import 'modules/_skills-section';
+@import 'modules/_experience-section';
+@import 'modules/_self-education';
+@import 'modules/_site-footer';
 

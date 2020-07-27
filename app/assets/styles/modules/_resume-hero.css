@@ -1,0 +1,62 @@
+.resume-hero {
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+
+    &__top-svg {
+        width:150px;
+        margin:0 auto;
+        display:block;
+    }
+
+    &__title {
+        font-size:7rem;
+        position:relative;
+        z-index:2;
+        margin:0;
+        letter-spacing:-7px;
+    }
+
+    &__subtitle {
+        font-size:3.5rem;
+        position:relative;
+        z-index:2;
+        margin:0;
+        color:$mainGreen;
+        transform:translateY(-20px);
+    }
+
+    &__contact-info {
+        position:relative;
+        z-index:2;
+        margin:0;
+        font-size:1.2rem;
+        font-family:$paragraphFont;
+        font-weight:100;
+    }
+
+    &__bg-svg {
+        position:absolute;
+        top:50%;
+        left:0;
+        width:100%;
+        transform:translateY(-50%);
+    }
+
+    &__link-list {
+        display:flex;
+        flex:1;
+        justify-content: space-around;
+        position:relative;
+        z-index:2;
+        font-family:$headingFont;
+        font-weight:900;
+        padding:5rem 0 2rem 0;
+        text-transform:uppercase;
+
+        a {
+            color:$mainGreen;
+        }
+    }
+}

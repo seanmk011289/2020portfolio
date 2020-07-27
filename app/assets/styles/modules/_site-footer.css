@@ -1,0 +1,11 @@
+.site-footer {
+    background:$mainGrey;
+
+    &__logo {
+        width:200px;
+    }
+
+    &__contact {
+        color:white;
+    }
+}

@@ -1,6 +1,7 @@
 .recent-work-section {
     text-align:center;
     position:relative;
+    overflow:hidden;
 
     &__bg {
         position:absolute;

@@ -1,0 +1,44 @@
+.self-education {
+    background:#f2f2f2;
+    margin:0;
+
+    &__title {
+        font-size:3rem;
+        margin-bottom:20px;
+
+        &-green {
+            color:$mainGreen;
+        }
+    }
+
+    &__p1 {
+        font-weight:100;
+        line-height:1.6rem;
+        max-width:800px;
+    }
+
+    &__list {
+        font-weight:500;
+        line-height:1.8rem;
+        transform:translateX(20px);
+        
+        @mixin atMedium {
+            transform:translateX(50px);
+        }
+    }
+
+    &__p2 {
+        font-weight:100;
+        line-height:1.6rem;
+        max-width:700px;
+
+
+        &--bold {
+            font-weight:900;
+
+            &--green {
+                color:$mainGreen;
+            }
+        }
+    }
+}

@@ -1,5 +1,7 @@
 .cta-section {
 
+    overflow: hidden;
+
     text-align:center;
 
     &__title {

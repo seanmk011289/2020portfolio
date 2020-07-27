@@ -1,0 +1,49 @@
+.about-section {
+    background:$mainGrey;
+    color:white;
+
+    &__title {
+        font-size:4rem;
+        color:white;
+        margin:0;
+        position:relative;
+        z-index:2;
+
+        &--green {
+            color:$mainGreen;
+        }
+    }
+
+    &__svg {
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+    }
+
+    &__paragraph {
+        font-size:1.15rem;
+        font-weight:100;
+        line-height:2.2rem;
+    }
+
+    &__links-list {
+        display:flex;
+        flex:1;
+        justify-content: flex-start;
+        position:relative;
+        z-index:2;
+        font-family:$headingFont;
+        font-weight:900;
+        padding-top:2rem;
+
+        :first-child {
+            padding-right:25px;
+        }
+
+        a {
+            color:$mainGreen;
+
+        }
+    }
+
+}

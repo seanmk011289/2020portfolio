@@ -1,0 +1,74 @@
+.skills-section {
+    text-align:center;
+
+    &__title {
+        font-size:4rem;
+        margin:0;
+    }
+
+    &__subtitle {
+        margin:20px auto;
+        font-weight:200;
+        max-width:700px;
+        line-height: 1.5rem;
+        
+
+        @mixin atMedium {
+            font-size:1.2rem;
+            line-height: 2rem;
+        }
+    }
+
+    &__flex-section {
+        display:block;
+        margin:0 auto;
+        box-sizing:border-box;
+        transform:translateX(0);
+        
+
+        @mixin atMedium {
+        display:flex;
+        justify-content: space-between;
+        max-width:1200px;
+        transform:translateX(30px);
+        }
+    
+        &__flex-item {
+            padding:20px;
+            margin:5px;
+            text-align:center;
+            
+            @mixin atMedium {
+                text-align:left;
+            }
+        }
+    }
+
+    &__flex-title {
+        font-size:1.5rem;
+        transform:translateY(-10px);
+        margin-bottom:10px;
+
+    }
+
+    &__flex-skills {
+        line-height:1.9rem;
+        max-width:350px;
+        margin:0 auto;
+        font-weight:100;
+
+        @mixin atMedium {
+            max-width:300px;
+        }
+
+    }
+
+    &__hover {
+        color:$mainGreen;
+        margin-top:50px;
+        text-decoration:underline;
+        cursor: pointer;
+        font-size:1.3rem;
+    }
+
+}
