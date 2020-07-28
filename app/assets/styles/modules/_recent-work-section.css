@@ -19,9 +19,13 @@
     }
 
     &__title {
-        font-size:3.6rem;
+        font-size:2rem;
         letter-spacing:-2px;
         margin-bottom:20px;
+
+        @mixin atMedium {
+            font-size:3.6rem;
+        }
     }
 
     &__subtitle {
@@ -45,18 +49,36 @@
         z-index:2;
 
         &-image {
-            width:600px;
+           width: 300px;
             display:block;
             margin-left:auto;
             margin-right:auto;
             padding-bottom:50px;
+
+            @mixin atSmall {
+                width:400px;
+            }
+
+            @mixin atMedium {
+                width:600px;
+            }
         }
 
         &-button-left {
             width:50px;
             position:absolute;
             left:20px;
-            top:150px;
+            top:280px;
+
+            @mixin atSmall  {
+                left:20px;
+                top:120px;
+            }
+           
+            @mixin atMedium {
+                left:20px;
+                top:150px;
+            }
             
             & circle {
                 transition:all 0.2s ease;
@@ -71,7 +93,18 @@
             width:50px;
             position:absolute;
             right:20px;
-            top:150px;
+            top:280px;
+
+            @mixin atSmall  {
+                right:20px;
+                top:120px;
+            }
+
+            @mixin atMedium {
+                right:20px;
+                top:150px;
+                
+            }
 
             & circle {
                 transition:all 0.2s ease;

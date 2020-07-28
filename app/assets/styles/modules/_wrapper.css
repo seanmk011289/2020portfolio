@@ -2,7 +2,7 @@
     padding:2rem;
 
     &--b-padding {
-        padding-bottom:100px;
+        padding-bottom:150px;
     }
 
     &--mw-450 {
@@ -67,9 +67,13 @@
         }
 
         &-side {
-            padding: 6rem 2rem;
+            padding: 3rem 2rem;
             position:relative;
             z-index:2;
+
+            @mixin atMedium {
+                padding: 6rem 2rem;
+            }
         }
         
     }

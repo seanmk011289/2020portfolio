@@ -2,10 +2,9 @@ import '../styles/styles.css'
 
 import '../styles/styles.scss'
 
-
-import HeroAnimations from './HeroAnimations'
-
 import Glider from './Glider'
+import HomepageGSAP from './HomepageGSAP'
+import HomepageAnimations from './HomepageAnimations'
 
 //Code for webpack dev server
 if (module.hot) {
@@ -14,7 +13,10 @@ if (module.hot) {
 
 new Glider();
 
-new HeroAnimations();
+new HomepageGSAP();
+
+new HomepageAnimations();
+
 
 
 

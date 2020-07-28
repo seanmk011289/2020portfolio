@@ -1,3 +1,5 @@
+import gsap from 'gsap';
+
 class HeroAnimations {
     constructor(){
 
@@ -5,10 +7,12 @@ class HeroAnimations {
         this.heroCurves = document.querySelector('.hero-section__bottom-svg');
         this.heroTopSVG = document.querySelector('.hero-section__top-svg');
         this.heroButton = document.querySelector('.hero-section__btn');
-        this.heroTopSVGtop = document.querySelector('#top');
-        this.heroTopSVGmid = document.querySelector('#middle');
-        this.heroTopSVGbot = document.querySelector('#bottom');
+        this.heroTopSVGtop = document.querySelector('.hero-section__top-svg-top');
+        this.heroTopSVGmid = document.querySelector('.hero-section__top-svg-middle');
+        this.heroTopSVGbot = document.querySelector('.hero-section__top-svg-bottom');
 
+
+        this.gsapAnimationHero()
         //Make sure to call the events method
         this.events()
 
@@ -20,12 +24,14 @@ class HeroAnimations {
             this.heroButton.addEventListener('mouseover', () => {
                 this.addShadow();
                 this.addHeroScale();
+                this.addHeroTextShadow();
             })
 
 
             this.heroButton.addEventListener('mouseout', () => {
                 this.removeShadow();
                 this.removeHeroScale();
+                this.removeHeroTextShadow()
             })
 
             window.addEventListener("scroll", () => {
@@ -59,6 +65,14 @@ class HeroAnimations {
             this.heroCurves.style.transform = `translatex(-${move}px)`;
         }
         
+        gsapAnimationHero() {
+
+            gsap.from(this.heroTopSVGtop, {duration: 0.5, y: -500, ease:"bounce", delay: 1, transformOrigin:"center"})
+            gsap.from(this.heroTopSVGmid, {duration: 0.5, y: -500, ease:"bounce", delay: 1.2})
+            gsap.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce", delay: 1.4})
+           
+
+        }
 }
 
 export default HeroAnimations;

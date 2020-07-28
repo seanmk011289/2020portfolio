@@ -10,7 +10,7 @@
             font-size:3.5rem;
             max-width:1000px;
         }
-
+        
         &--green {
             color:$mainGreen;
         }

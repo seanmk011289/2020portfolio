@@ -52,7 +52,6 @@
     }
 
     &__top-svg-bottom {
-        transform-origin: 50% 50%;
 
         &-animate {
             animation: hero-animate .5s forwards .1s;
@@ -76,6 +75,10 @@
         margin-bottom:20px;
         line-height: 3rem;
         display:block;
+
+        &__shadow {
+            animation: hero-text-shadow .8s forwards .15s;
+        }
 
         @mixin atMedium {
             font-size:6.5rem;
@@ -124,11 +127,10 @@
 
 @keyframes hero-animate {
     from {
-        transform: scaleX(1);
         fill:#d3d3d3;
     }
     to {
-        transform: scaleX(1.2);
+       
         fill:#53c48b;
     }
 }
@@ -142,4 +144,62 @@
         transform: scaleX(1);
         fill:#d3d3d3;
     }
+}
+
+@keyframes hero-text-shadow {
+    from {
+       text-shadow:none;
+    }
+    to {
+        text-shadow:5px 0 20px rgba($mainGreen, 1);
+    }
+}
+
+#revealOne {
+    position:relative;
+}
+
+#revealOne::after {
+    content:' ';
+    z-index:1;
+    position:absolute;
+    width:102%;
+    height:100%;
+    background:white;
+    left:0;
+    transform-origin: 100% 0%;
+}
+
+#revealTwo::after {
+    content:' ';
+    z-index:1;
+    position:absolute;
+    width:102%;
+    height:100%;
+    background:white;
+    left:0;
+    transform-origin: 100% 0;
+}
+
+
+#revealThree::after {
+    content:' ';
+    z-index:1;
+    position:absolute;
+    width:102%;
+    height:110%;
+    background:white;
+    left:0;
+    transform-origin: 100% 0;
+}
+
+#revealFour::after {
+    content:' ';
+    z-index:1;
+    position:absolute;
+    width:102%;
+    height:100%;
+    background:white;
+    left:0;
+    transform-origin: 100% 0;
 }

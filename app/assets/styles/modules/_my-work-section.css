@@ -49,6 +49,10 @@
             width:550px;
             top:100px;
         }
+
+        &__spin-faster {
+            animation-duration: 0.5s;
+        }
     }
 
     &__right-svg {
@@ -60,6 +64,7 @@
         right:50px;
         top:75px;
         animation: 'spin-left' 1s infinite linear;
+        
 
         @mixin atMedium {
             width:250px;
