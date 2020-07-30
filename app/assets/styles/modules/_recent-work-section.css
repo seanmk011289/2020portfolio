@@ -13,15 +13,64 @@
         z-index:1;
     }
 
+    &__path1 {
+        stroke-dasharray: 4748px;
+        stroke-dashoffset: -4748px;
+
+        &__animate {
+            animation: path1_go 3s forwards;
+        }
+    }
+
+    @keyframes path1_go {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+
+    &__path2 {
+        stroke-dasharray: 4520px;
+        stroke-dashoffset: -4520px;
+        
+        &__animate {
+            animation: path2_go 3s forwards;
+        }
+    }
+
+    @keyframes path2_go {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+
+   
+
+
     &__svg {
         width:35px;
         padding-right:5px;
     }
 
+
+
     &__title {
         font-size:2rem;
         letter-spacing:-2px;
         margin-bottom:20px;
+        position:relative;
+
+        &::after {
+            content:'';
+            background:white;
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            transform-origin:100% 100%;
+        }
 
         @mixin atMedium {
             font-size:3.6rem;

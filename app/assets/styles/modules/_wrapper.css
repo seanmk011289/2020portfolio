@@ -2,7 +2,11 @@
     padding:2rem;
 
     &--b-padding {
-        padding-bottom:150px;
+        padding-bottom:75px;
+
+        @mixin atMedium {
+            padding-bottom:150px;
+        }
     }
 
     &--mw-450 {

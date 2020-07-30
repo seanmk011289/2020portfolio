@@ -53,3 +53,21 @@
     }
 
 }
+
+.blog-guide-path {
+    stroke-dasharray: 1689.8388671875px;
+    stroke-dashoffset: -1689.8388671875px;
+
+    &--animate {
+        animation: blogPathDraw 1s forwards ease-out;
+        animation-delay: 0.5s;
+    }
+}
+
+
+
+@keyframes blogPathDraw {
+    to {
+       stroke-dashoffset: 0px; 
+    }
+}

@@ -30,6 +30,10 @@
 
         @mixin atMedium {
             font-size:0.8rem;
+
+            &.white {
+                color:white;
+            }
         }
     }
 }

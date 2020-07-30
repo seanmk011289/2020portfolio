@@ -14,7 +14,13 @@ export default class HomepageAnimations {
         this.heroTopSVGmid = document.querySelector('.hero-section__top-svg-middle');
         this.heroTopSVGbot = document.querySelector('.hero-section__top-svg-bottom');
 
+        //Blog Elements 
+        this.blogSection = document.querySelector('.blog-section');
+        this.blogSVG = document.querySelector('.blog-guide-path');
+
         this.gsapAnimationHero();
+
+        this.blogSectionObserver();
 
         this.events();
 
@@ -78,6 +84,21 @@ export default class HomepageAnimations {
         gsap.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce", delay: 1.4})
        
 
+    }
+
+    blogSectionObserver() {
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    this.blogSVG.classList.add('blog-guide-path--animate');
+                } else {
+                    this.blogSVG.classList.remove('blog-guide-path--animate');
+                }
+            })
+        })
+
+        observer.observe(this.blogSection);
     }
 
 

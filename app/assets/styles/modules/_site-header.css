@@ -3,6 +3,7 @@
     position:fixed;
     width:100%;
     padding-bottom:15px;
+    background:white;
 
     &__logo {
         position:absolute;
