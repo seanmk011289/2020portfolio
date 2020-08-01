@@ -1,5 +1,4 @@
 
-import gsap from 'gsap'
 
 export default class HomepageAnimations {
 
@@ -31,14 +30,12 @@ export default class HomepageAnimations {
         this.heroButton.addEventListener('mouseover', () => {
             this.addShadow();
             this.addHeroScale();
-            this.addHeroTextShadow();
         })
 
 
         this.heroButton.addEventListener('mouseout', () => {
             this.removeShadow();
             this.removeHeroScale();
-            this.removeHeroTextShadow()
         })
 
     }
