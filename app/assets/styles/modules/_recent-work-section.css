@@ -81,6 +81,7 @@
         font-weight:100;
         line-height:2rem;
         margin:0 auto;
+        max-width:600px;
         
         @mixin atMedium {
             font-size:1.2rem;

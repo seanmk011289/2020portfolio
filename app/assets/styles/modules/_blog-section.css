@@ -59,8 +59,8 @@
     stroke-dashoffset: -1689.8388671875px;
 
     &--animate {
-        animation: blogPathDraw 1s forwards ease-out;
-        animation-delay: 0.5s;
+        animation: blogPathDraw 1.2s forwards ease-out;
+        animation-delay: 1.3s;
     }
 }
 

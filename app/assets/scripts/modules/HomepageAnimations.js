@@ -7,6 +7,7 @@ export default class HomepageAnimations {
         //DOM Selectors
 
         ////Hero Elements
+        this.heroSection = document.querySelector('.hero-section');
         this.heroCurves = document.querySelector('.hero-section__bottom-svg');
         this.heroTopSVG = document.querySelector('.hero-section__top-svg');
         this.heroButton = document.querySelector('.hero-section__btn');
@@ -14,13 +15,9 @@ export default class HomepageAnimations {
         this.heroTopSVGmid = document.querySelector('.hero-section__top-svg-middle');
         this.heroTopSVGbot = document.querySelector('.hero-section__top-svg-bottom');
 
-        //Blog Elements 
-        this.blogSection = document.querySelector('.blog-section');
-        this.blogSVG = document.querySelector('.blog-guide-path');
+        this.scrollCurvesTrigger = () => this.scrollCurves();
 
-        this.gsapAnimationHero();
-
-        this.blogSectionObserver();
+        this.heroSectionObserver();
 
         this.events();
 
@@ -44,13 +41,23 @@ export default class HomepageAnimations {
             this.removeHeroTextShadow()
         })
 
-        window.addEventListener("scroll", () => {
-            this.scrollCurves();
-        })
-
     }
 
     ////FUNCTIONS
+
+    heroSectionObserver() {
+        let heroObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    window.addEventListener("scroll", this.scrollCurvesTrigger);
+                } else {
+                    window.removeEventListener("scroll", this.scrollCurvesTrigger);
+                }
+            })
+        })
+
+        heroObserver.observe(this.heroSection);
+    }
 
     addShadow() {
         this.heroButton.classList.add('btn--hover-lg-shadow');
@@ -72,33 +79,10 @@ export default class HomepageAnimations {
         this.heroTopSVGbot.classList.remove('hero-section__top-svg-bottom-animate');
     }
 
+
     scrollCurves(e) {
         let move = window.pageYOffset;
         this.heroCurves.style.transform = `translatex(-${move}px)`;
-    }
-    
-    gsapAnimationHero() {
-
-        gsap.from(this.heroTopSVGtop, {duration: 0.5, y: -500, ease:"bounce", delay: 1, transformOrigin:"center"})
-        gsap.from(this.heroTopSVGmid, {duration: 0.5, y: -500, ease:"bounce", delay: 1.2})
-        gsap.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce", delay: 1.4})
-       
-
-    }
-
-    blogSectionObserver() {
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    this.blogSVG.classList.add('blog-guide-path--animate');
-                } else {
-                    this.blogSVG.classList.remove('blog-guide-path--animate');
-                }
-            })
-        })
-
-        observer.observe(this.blogSection);
     }
 
 
