@@ -170,7 +170,7 @@ export default class HomepageGSAP {
                  blogTl.from(this.blogSubtitle, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.5')
                  blogTl.from(this.blogButton, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.3')
 
-                res()
+                 res()
             })
 
         }
