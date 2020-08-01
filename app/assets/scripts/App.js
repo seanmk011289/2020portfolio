@@ -19,7 +19,7 @@ new HeroReveal();
 
 function init() {
 
-    if(document.querySelector('.hero-section')) {
+    if (document.querySelector('.hero-section')) {
         new HomepageGSAP();
         new HomepageAnimations();
         new Glider();
