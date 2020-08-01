@@ -1,23 +1,13 @@
 import gsap from 'gsap';
-import  { ScrollTrigger, CSSRulePlugin, TimelineMax } from "gsap/all";
+import  { CSSRulePlugin, TimelineMax } from "gsap/all";
+
+gsap.registerPlugin(CSSRulePlugin);
 
 
 export default class HomepageGSAP {
     constructor() {
-        //DOM ELEMENTS
 
-        ///HERO ELEMENTS
-        this.heroFirst = document.querySelector("#revealOne");
-        this.heroSecond = document.querySelector("#revealTwo");
-        this.heroThird = document.querySelector("#revealThree");
-        this.heroFourth = document.querySelector("#revealFour");
-        this.heroText = document.querySelector(".hero-section__title");
-        this.heroParagraph = document.querySelector(".hero-section__subtitle");
-        this.heroButton = document.querySelector(".hero-section__btn");
-        this.heroWaves = document.querySelector(".hero-section__bottom-svg");
-        this.heroTopSVGtop = document.querySelector('.hero-section__top-svg-top');
-        this.heroTopSVGmid = document.querySelector('.hero-section__top-svg-middle');
-        this.heroTopSVGbot = document.querySelector('.hero-section__top-svg-bottom');
+        //DOM ELEMENTS
 
         //MY WORK SECTION ELEMENTS
         this.myworkSection = document.querySelector('.my-work-section')
@@ -40,14 +30,14 @@ export default class HomepageGSAP {
         this.blogSwitch = false;
 
         //CTA Section
+        this.ctaSection = document.querySelector('.cta-section')
         this.CTAs = document.querySelectorAll('.cta-section__flex-item');
         [this.firstCTA, this.secondCTA, this.thirdCTA] = this.CTAs;
 
-
-        this.heroReveal();
-        this.myWorkAnimations();
+        this.myWorkObserver();
         this.recentWorkAnimations();
         this.blogSectionObserver();
+        this.ctaSectionObserver();
         this.events();
     }
 
@@ -55,60 +45,25 @@ export default class HomepageGSAP {
     events() {
         
     }
- 
-    heroReveal() {
-
-            gsap.registerPlugin(CSSRulePlugin);
-
-
-            //Hero Text reveal
-            var ruleOne = CSSRulePlugin.getRule(`#revealOne:after`);
-            var ruleTwo = CSSRulePlugin.getRule(`#revealTwo:after`);
-            var ruleThree = CSSRulePlugin.getRule(`#revealThree:after`);
-            var ruleFour = CSSRulePlugin.getRule(`#revealFour:after`);
-    
-            gsap.from(this.heroText, {y: 150, duration:1, ease: 'power2.out', delay:0.5})
-            gsap.to(ruleOne, {cssRule: {scaleY: 0}, duration: 1, ease: 'power2.out', delay:0.5});
-            gsap.to(ruleTwo, {cssRule: {scaleY: 0}, duration: 1, ease: 'power2.out', delay:0.5});
-            gsap.to(ruleThree, {cssRule: {scaleY: 0}, duration: 1, ease: 'power2.out', delay:1.75});
-            gsap.to(ruleFour, {cssRule: {scaleY: 0}, duration: 1, ease: 'power2.out', delay:1.75});
-
-
-            // Hero Paragraph, button, and waves
-            gsap.from(this.heroParagraph, {opacity: 0, y: 50, duration:0.75, ease: 'ease-out', delay:2.5})
-            gsap.from(this.heroButton, {opacity: 0, duration:0.75, ease: 'ease-out', delay:2.5})
-            gsap.from(this.heroWaves, {opacity: 0, y:150, duration:0.75, ease: 'ease-out', delay: 2.5})
-
-            //Hero top svg
-            gsap.from(this.heroTopSVGtop, {duration: 0.5, y: -500, ease:"bounce", delay: 1, transformOrigin:"center"})
-            gsap.from(this.heroTopSVGmid, {duration: 0.5, y: -500, ease:"bounce", delay: 1.2})
-            gsap.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce", delay: 1.4})
-            
-        }
 
 
         //MY WORK Section Animation
 
-        myWorkAnimations() {
+        myWorkObserver() {
 
-                gsap.registerPlugin(ScrollTrigger);
+            const options = {
+                rootMargin: "-150px"
+            }
 
-                gsap.from(this.myworkTitle, { duration:1.5, x:-300, opacity:0, ease: "power3.out", 
-                    scrollTrigger: {
-                    trigger: this.myworkTitle,
-                    start: 'center 80%',
-                    toggleActions: "play none none none"
+            let myWorkObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        gsap.from(this.myworkTitle, { duration:1.5, x:-300, opacity:0, ease: "power3.out"});
+                        gsap.from(this.myworkSubtitle, { duration:1.5, x:300, opacity:0, ease: "power3.out"});
                     }
-                });
-
-                gsap.from(this.myworkSubtitle, { duration:1.5, x:300, opacity:0, ease: "power3.out", 
-                    scrollTrigger: {
-                    trigger: this.myworkSection,
-                    start: 'center 90%',
-                    toggleActions: "play none none none"
-                    }
-                });
-
+                })
+            }, options)
+            myWorkObserver.observe(this.myworkSection);
         }
 
 
@@ -150,17 +105,9 @@ export default class HomepageGSAP {
 
     //Blog animations and experiment with a Promise
 
-        blogDraw() {
-            this.blogSVG.classList.add('blog-guide-path--animate');
-            console.log("DREW")
-        }
 
-        blogUnDraw() {
-            this.blogSVG.classList.remove('blog-guide-path--animate');
-        }
 
-        blogPromise() {
-            return new Promise((res, rej) => {
+        blogGSAP() {
 
                 var blogTl = new TimelineMax({
                     
@@ -170,9 +117,14 @@ export default class HomepageGSAP {
                  blogTl.from(this.blogSubtitle, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.5')
                  blogTl.from(this.blogButton, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.3')
 
-                 res()
-            })
+        }
 
+        blogDraw() {
+            this.blogSVG.classList.add('blog-guide-path--animate');
+        }
+
+        blogUndraw() {
+            this.blogSVG.classList.remove('blog-guide-path--animate');
         }
 
 
@@ -180,30 +132,52 @@ export default class HomepageGSAP {
 
             const options = {
                 root:null,
-                rootMargin: '-250px'
+                rootMargin: '-150px'
             }
     
-            const observer = new IntersectionObserver(entries => {
+            const blogObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && this.blogSwitch == false) {
-                        this.blogPromise().then(() => {
-                            this.blogDraw();
-                            this.blogSwitch = true
-                        }).catch(() => {
-                            console.log("still haven't got it")
-                        })
-                    } else {
-                        this.blogUnDraw();
-                        this.blogSwitch = false;
-                    }
-                })
+                    if (entry.isIntersecting) {
+                        this.blogGSAP()
+                        this.blogDraw();
+                        } else {
+                            this.blogUndraw();
+                        }
+                    })
             }, options)
     
-            observer.observe(this.blogSection);
+            blogObserver.observe(this.blogSection);
     }
 
 
     ///CTA Section Animatoins
+
+    ctaSectionTimeline() {
+
+        var ctaTL = new TimelineMax({
+        })
+
+        ctaTL.from(this.firstCTA, {duration:1, y:300, opacity:0, ease:'power3.out'})
+        ctaTL.from(this.secondCTA, {duration:1, y:300, opacity:0, ease:'power3.out'}, '-=0.75')
+        ctaTL.from(this.thirdCTA, {duration:1, y:300, opacity:0, ease:'power3.out'}, '-=0.75')
+    }
+
+    ctaSectionObserver() {
+
+        const options = {
+            rootMargin: '-300px'
+        }
+
+        let ctaObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    this.ctaSectionTimeline();
+                }
+            })
+        }, options)
+
+        ctaObserver.observe(this.ctaSection);
+    }
 
 }
 

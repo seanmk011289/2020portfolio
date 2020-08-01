@@ -1,0 +1,15 @@
+.transition-fade {
+    opacity:1;
+    transition: all 500ms;
+    transform-origin:50% 0%;
+}
+
+html.is-animating .transition-fade {
+    opacity:0;
+    transform:translateX(-100%);
+}
+
+html.is-animating .transition-fade {
+    opacity:0;
+    
+}
