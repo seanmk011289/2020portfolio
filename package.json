@@ -29,7 +29,8 @@
     "react-dom": "^16.11.0",
     "sass": "^1.26.10",
     "scroll-out": "^2.2.11",
-    "swup": "^2.0.11"
+    "swup": "^2.0.11",
+    "wavify": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

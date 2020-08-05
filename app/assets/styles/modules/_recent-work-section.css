@@ -45,9 +45,6 @@
     }
 
 
-   
-
-
     &__svg {
         width:35px;
         padding-right:5px;
@@ -110,7 +107,7 @@
             }
 
             @mixin atMedium {
-                width:600px;
+                width:700px;
             }
         }
 
@@ -118,7 +115,7 @@
             width:50px;
             position:absolute;
             left:20px;
-            top:280px;
+            top:220px;
 
             @mixin atSmall  {
                 left:20px;
@@ -143,7 +140,7 @@
             width:50px;
             position:absolute;
             right:20px;
-            top:280px;
+            top:220px;
 
             @mixin atSmall  {
                 right:20px;

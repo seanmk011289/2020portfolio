@@ -14,6 +14,46 @@
         }
     }
 
+    &__top-svg-top {
+        transition: all 0.25s ease-out;
+        transform-origin: 50% 50%;
+
+        &-animate {
+            animation: animateSVG 0.1s ease-out forwards;
+    }
+}
+
+    &__top-svg-middle {
+        transition: all 0.25s ease-out;
+        transform-origin: 50% 50%;
+        &-animate {
+            animation: animateSVG 0.1s ease-out forwards;
+            animation-delay: .05s;
+    }
+    }
+
+    &__top-svg-bottom {
+        transition: all 0.25s ease-out;
+        transform-origin: 50% 50%;
+
+        &-animate {
+            animation: animateSVG 0.1s ease-out forwards;
+            animation-delay: .1s;
+        }
+    }
+
+    @keyframes animateSVG {
+        from {
+            transform:scaleX(1);
+            fill: #d3d3d3;
+        }
+        to {
+            transform:scaleX(1.2);
+            fill: $mainGreen;
+        }
+    }
+
+
     &__title {
         font-size:2.75rem;
         position:relative;

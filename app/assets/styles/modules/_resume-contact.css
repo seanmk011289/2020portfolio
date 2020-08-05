@@ -3,12 +3,16 @@
 
     &__title {
         max-width:400px;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 30px auto;
         
+        @mixin atSmall {
+            font-size:2.5rem;
+            max-width:1000px;
+        }
+
         @mixin atMedium {
             font-size:3.5rem;
-            max-width:1000px;
         }
         
         &--green {

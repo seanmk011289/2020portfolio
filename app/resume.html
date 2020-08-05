@@ -15,8 +15,8 @@
                 </div>
                 <div class="primary-nav primary-nav__pull-right">
                     <ul>
-                            <li><a href="http://localhost:8080/resume.html">MY EXPERIENCE</a></li>
-                            <li><a class="primary-nav__last-link" href="#">CONTACT</a></li>
+                            <li><a href="/resume.html">MY EXPERIENCE</a></li>
+                            <li><a class="primary-nav__last-link open-form-modal" href="#">CONTACT</a></li>
                     </ul>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
             <!-- SWUP DIV -->
     <div id="swup" class="transition-fade">
 
-            <div class="resume-hero">
+            <div class="resume-hero page-section">
 
                 <div class="wrapper--padding-lg wrapper--padding-lg-resume">
 
@@ -47,9 +47,9 @@
 
                       <div class="wrapper--mw-450">
                       <div class="resume-hero__link-list">
-                            <a href="#mini-bio">Mini Bio</a>
-                            <a href="#skills">Skills</a>
-                            <a href="#experience">Experience</a>
+                            <a class="resume-hero__link" data-no-swup href="#mini-bio">Mini Bio</a>
+                            <a class="resume-hero__link" data-no-swup href="#skills">Skills</a>
+                            <a class="resume-hero__link" data-no-swup href="#experience">Experience</a>
                       </div>
                     </div>
 
@@ -71,7 +71,7 @@
                     </div>
             </div>
 
-            <div class="about-section wrapper--relative" id="mini-bio">
+            <div class="about-section wrapper--relative page-section" data-section="about" id="mini-bio">
                 <div class="wrapper--mw-875 wrapper--padding-lg">
                     <h2 class="about-section__title">About <span class="about-section__title--green">Me</span></h2>
 
@@ -79,8 +79,8 @@
                         I have been working in web design and development for 2 years.  Completely se-taught, I am a passionate problem solver and life-long learner.  My ideal free time is spent learning about web design and development tools, coding along to a tutorial,  designing websites for clients, reading about UX design, or watching a great movie.  I am a huge movie nerd.</p>
                     
                     <div class="about-section__links-list">
-                        <a href="#skills">Skills</a>
-                        <a href="#experience">Experience</a>
+                        <a href="#skills" data-no-swup>Skills</a>
+                        <a href="#experience" data-no-swup>Experience</a>
                     </div>
 
                     
@@ -104,7 +104,7 @@
                 </div>
 
 
-            <div class="skills-section" id="skills">
+            <div class="skills-section page-section" data-section="skills" id="skills">
                 <div class="wrapper wrapper--padding-med wrapper--mw-1300">
                 <h2 class="skills-section__title">My Skills</h2>
 
@@ -151,13 +151,14 @@
             </div>
             </div>
 
-            <div class="experience-section" id="experience">
+            <div class="experience-section page-section" data-section="experience" id="experience">
 
                 <div class="wrapper--padding-med wrapper--mw-1300">
 
                 <h2 class="experience-section__title">My Experience</h2>
                 <div class="experience-section__flex-section">
-                    <div class="experience-section__flex-item">
+
+                    <div class="experience-section__flex-item" data-section="experience-section">
                             <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 150 42" class="experience-section__flex-item__svg">
                                 <style>
                                   .st0{fill:#d3d3d3}
@@ -179,7 +180,7 @@
                               </ul>
                     </div>
 
-                    <div class="experience-section__flex-item">
+                    <div class="experience-section__flex-item" data-section="experience-section">
                             <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 150 42" class="experience-section__flex-item__svg">
                                 <style>
                                   .st0{fill:#d3d3d3}
@@ -201,7 +202,7 @@
                               </ul>
                     </div>
 
-                    <div class="experience-section__flex-item">
+                    <div class="experience-section__flex-item" data-section="experience-section">
                             <svg xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 150 42" class="experience-section__flex-item__svg">
                                 <style>
                                   .st0{fill:#d3d3d3}
@@ -241,8 +242,8 @@
 
                 </div>
 
-            <div class="self-education">
-                <div class="wrapper--mw-875 wrapper--padding-med">
+            <div class="self-education page-section" data-section="self-education">
+                <div class="wrapper--mw-875 wrapper--padding-lg">
                 <h2 class="self-education__title">A little bit about <span class="self-education__title-green">self education</span>...</h2>
                 <p class="self-education__p1">As a perpetual learner, I have committed most of my free time to learning as much as I can about web design and development through books and online courses. I just wanted to mention a few of the most valuable assets that have assisted my learning through the past few years.</p>
                 <ul class="self-education__list">
@@ -262,7 +263,7 @@
             <div class="resume-contact">
                 <div class="wrapper--padding-med">
                 <h1 class="resume-contact__title">My name is Sean. <span class="resume-contact__title--green">Let's design.</span></h1>
-                <button class="btn btn--primary">Contact</button>
+                <button class="btn btn--primary open-form-modal">Contact</button>
             </div>
             </div>
 

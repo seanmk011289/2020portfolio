@@ -63,6 +63,14 @@
     &__div-title {
         font-size:1.5rem;
         text-transform:uppercase;
+
+        @mixin atLarge {
+            font-size:1.2rem;
+        }
+
+        @mixin atLarger {
+            font-size:1.5rem;
+        }
     }
 
     &__div-subtitle {

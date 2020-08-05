@@ -43,7 +43,7 @@
         width:250px;
         position:absolute;
         top:50px;
-        animation: 'spin-right' 5s infinite linear;
+        animation: 'spin-right' 4s infinite linear;
 
         @mixin atMedium {
             width:550px;
