@@ -150,7 +150,16 @@
         width:3500px;
         z-index:0;
         pointer-events:none;
-    }
+
+        &-2 {
+        position:absolute;
+        bottom:-2px;
+        left:-200px;
+        width:3500px;
+        z-index:0;
+        pointer-events:none;
+        }
+    } 
 }
 
 @keyframes hero-animate {

@@ -1,9 +1,10 @@
 import gsap from 'gsap';
-import  { CSSRulePlugin, TimelineMax } from "gsap/all";
+import { TimelineMax, CSSRulePlugin } from 'gsap/all';
 
 gsap.registerPlugin(CSSRulePlugin);
 
 export default class HeroReveal {
+    
     constructor() {
 
         this.heroText = document.querySelector(".hero-section__title");
@@ -15,14 +16,21 @@ export default class HeroReveal {
         this.heroTopSVGmid = document.querySelector('.hero-section__top-svg-middle');
         this.heroTopSVGbot = document.querySelector('.hero-section__top-svg-bottom');
 
-        this.heroReveal()
+        this.events();
 
+    }
+
+    events() {
+        window.addEventListener('load', () => {
+            console.log("HELLO")
+            this.heroReveal();
+        })
     }
 
     heroReveal() {
 
         //Hero Text reveal
-        var ruleOne = CSSRulePlugin.getRule(`.hero-section__title-gray::after`);
+        var ruleOne = CSSRulePlugin.getRule('.hero-section__title-gray::after');
         var ruleTwo = CSSRulePlugin.getRule(`.hero-section__title-green::after`);
 
         let heroTL = new TimelineMax({

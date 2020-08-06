@@ -6,21 +6,25 @@ import Swup from 'swup';
 import Glider from './modules/Glider'
 import HomepageGSAP from './modules/HomepageGSAP'
 import HomepageAnimations from './modules/HomepageAnimations'
-import HeroReveal from './modules/HeroReveal'
+import HeroReveal from './modules/HeroReveal';
 import ResumeHero from './modules/ResumeHero';
 import ResumeObserver from './modules/ResumeObserver';
 
+//SWUP
+let options = {
+    LINK_SELECTOR: 'a',
+    debugMode: true,
+};
+
+const swup = new Swup(options);
+
+new HeroReveal();
 
 function init() {
 
     let formModal
 
-    //SWUP
-    const swup = new Swup();
-
     if (document.querySelector('.hero-section')) {
-
-        new HeroReveal();
 
         let blogModal
 
@@ -62,6 +66,7 @@ function init() {
 
 
     if (document.querySelector('.resume-hero')) {
+
         new ResumeHero();
         new ResumeObserver();
         

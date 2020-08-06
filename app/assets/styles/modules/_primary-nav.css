@@ -7,8 +7,11 @@
     }
 
     ul > li > &__last-link {
-        color:$mainGreen;
+        color:white;
         font-weight:500;
+        padding:10px 20px;
+        background: $mainGreen;
+        border-radius:20px;
     }
 
     ul {
