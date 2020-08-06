@@ -115,7 +115,7 @@ export default class HomepageGSAP {
      
                  blogTl.from(this.blogTitle, {duration: 1, opacity:0, y:200, ease:'power3.out'}, 0.5)
                  blogTl.from(this.blogSubtitle, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.5')
-                 blogTl.from(this.blogButton, {duration: 1, opacity:0, y:200, ease:'power3.out'}, '-=0.3')
+                 blogTl.from(this.blogButton, {duration: 0.75, opacity:0, y:200, ease:'power3.out'}, '-=0.3')
 
         }
 

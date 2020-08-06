@@ -10,17 +10,17 @@ import HeroReveal from './modules/HeroReveal'
 import ResumeHero from './modules/ResumeHero';
 import ResumeObserver from './modules/ResumeObserver';
 
-//SWUP
-
-const swup = new Swup();
-
-new HeroReveal();
-
-let formModal
 
 function init() {
 
+    let formModal
+
+    //SWUP
+    const swup = new Swup();
+
     if (document.querySelector('.hero-section')) {
+
+        new HeroReveal();
 
         let blogModal
 

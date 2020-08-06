@@ -99,7 +99,7 @@ export default class ResumeObserver {
         skillsTL.from(this.skillsSubtitle, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
         skillsTL.to(ruleTwo, {cssRule: {scaleY: 0}, duration: 1, ease: 'power3.out'}, '-=1');
 
-        skillsTL.from(this.skillsOne, {duration:1, y:200, opacity:0, ease:'power3.out'})
+        skillsTL.from(this.skillsOne, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
         skillsTL.from(this.skillsTwo, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
         skillsTL.from(this.skillsThree, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
 

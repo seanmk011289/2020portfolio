@@ -31,18 +31,17 @@ export default class HeroReveal {
 
         //Hero top svg
         heroTL.from(this.heroTopSVGtop, {duration: 0.5, y: -500, ease:"bounce", transformOrigin:"center"})
-        heroTL.from(this.heroTopSVGmid, {duration: 0.5, y: -500, ease:"bounce"})
-        heroTL.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce"})
+        heroTL.from(this.heroTopSVGmid, {duration: 0.5, y: -500, ease:"bounce"}, '-=.25')
+        heroTL.from(this.heroTopSVGbot, {duration: 0.5, y: -500, ease:"bounce"}, '-=.25')
     
-        // heroTL.from(this.heroText, {y: 50, duration:1, ease: 'power3.out'})
-        heroTL.to(ruleOne, {cssRule: {scaleY: 0}, duration: 1.5, ease: 'power3.out'});
-        heroTL.to(ruleTwo, {cssRule: {scaleY: 0}, duration: 1.5, ease: 'power3.out'});
+        heroTL.from(this.heroText, {y: 75, duration: 1, ease: 'power3.out'}, '-=.25')
+        heroTL.to(ruleOne, {cssRule: {scaleY: 0}, duration: 1, ease: 'power3.out'}, '-=1');
+        heroTL.to(ruleTwo, {cssRule: {scaleY: 0}, duration: 1, ease: 'power3.out'}, '-=0.1');
 
         // Hero Paragraph, button, and waves
-        heroTL.from(this.heroParagraph, {opacity: 0, y:50, duration:0.75, ease: 'ease-out'})
-        heroTL.from(this.heroButton, {opacity: 0, duration:0.5, y:50, ease: 'power3.out'})
-        heroTL.from(this.heroWaves, {opacity: 0, y:150, duration:0.75, ease: 'ease-out'})
-        heroTL.from(this.heroWaves2, {opacity: 0, y:150, duration:0.75, ease: 'ease-out'})
+        heroTL.from(this.heroParagraph, {opacity: 0, y:50, duration:0.75, ease: 'ease-out'}, '-=.5')
+        heroTL.from(this.heroButton, {opacity: 0, duration: 1, y: 50, ease: 'power3.out'})
+        heroTL.from(this.heroWaves, {opacity: 0, y:150, duration: 1, ease: 'power3.out'}, '-=1')
         
     }
 } 
