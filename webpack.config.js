@@ -118,7 +118,7 @@ if(currentTask == "dev") {
         contentBase: path.join(__dirname, 'app'),
         watchContentBase: true,
         hot: true,
-        port: 8080,
+        port: 8000,
         host: '0.0.0.0'
     }
     config.mode = "development"

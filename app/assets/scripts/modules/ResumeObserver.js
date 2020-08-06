@@ -32,6 +32,13 @@ export default class ResumeObserver {
         [this.expPara1, this.expPara2, this.expPara3] = this.experienceParas;
         this.experienceLists = document.querySelectorAll('.experience-section__flex-item__list');
         [this.expList1, this.expList2, this.expList3] = this.experienceLists;
+
+        //Self Education Section
+        this.selfEdTitle = document.querySelector('.self-education__title');
+        this.selfEdPara1 = document.querySelector('.self-education__p1');
+        this.selfEdList = document.querySelector('.self-education__list');
+        this.selfEdPara2 = document.querySelector('.self-education__p2');
+
         
 
         this.resumeObserver();
@@ -65,7 +72,7 @@ export default class ResumeObserver {
                 } else if (entry.isIntersecting && entry.target.dataset.section == "experience") {
                     this.experienceAnimation()
                 } else if (entry.isIntersecting && entry.target.dataset.section == "self-education") {
-                    console.log("Self-education")
+                    this.selfEducation()
                 }
             })
         }, options)
@@ -130,6 +137,18 @@ export default class ResumeObserver {
         expTL.from(this.expPara3, {duration: 1, y:200, opacity:0, ease:'power3.out'}, '-=1.25')
         expTL.from(this.expList3, {duration: 1, y:200, opacity:0, ease:'power3.out'}, '-=1')
 
+    }
+
+    selfEducation() {
+
+        let selfTL = new TimelineMax({
+
+        })
+
+        selfTL.from(this.selfEdTitle, {duration: 1, opacity: 0, y: 100, ease: "ease-out"})
+        selfTL.from(this.selfEdPara1, {duration: 1, opacity: 0, y: 100, ease: "ease-out"})
+        selfTL.from(this.selfEdList, {duration: 1, opacity: 0, y: 100, ease: "ease-out"}, '-=0.5')
+        selfTL.from(this.selfEdPara2, {duration: 1, opacity: 0, y: 100, ease: "ease-out"}, '-=0.5')
 
     }
 

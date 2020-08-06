@@ -20,6 +20,8 @@ export default class HomepageGSAP {
         this.recentWorkSection = document.querySelector('.recent-work-section');
         this.recentWorkGlider = document.querySelector('.recent-work-section__glider');
         this.recentWorkSection = document.querySelector('.recent-work-section');
+        this.recentWorkSubtitle2 = document.querySelector('.recent-work-section__subtitle2');
+        this.recentWorkBehance = document.querySelector('.recent-work-section__behance-button');
 
         //Blog Elements 
         this.blogSection = document.querySelector('.blog-section');
@@ -82,7 +84,10 @@ export default class HomepageGSAP {
             recentWorkTl.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
             recentWorkTl.from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
             recentWorkTl.to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
-            recentWorkTl.from(this.recentWorkGlider, {duration: 1.5, y:100, opacity:0, ease: 'ease-out'}, 1)
+            recentWorkTl.from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
+            recentWorkTl.from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+            recentWorkTl.from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+
 
             let options = {
                 root:null,

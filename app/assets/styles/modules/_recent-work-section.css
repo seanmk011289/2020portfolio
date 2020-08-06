@@ -86,6 +86,24 @@
         }
     }
 
+    &__subtitle2 {
+        font-weight:100;
+        line-height:2rem;
+        margin:10px auto;
+        max-width:600px;
+        
+        @mixin atMedium {
+            font-size:1.2rem;
+            max-width:500px;
+        }
+
+        &--green {
+            color:$mainGreen;
+            font-weight:500;
+        }
+    }
+    
+
     &__glider {
 
         max-width:1000px;

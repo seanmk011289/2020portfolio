@@ -7,6 +7,7 @@
     padding: 15px 40px;
     font-size:0.9rem;
     cursor:pointer;
+    border-radius:30px;
 
     @mixin atMedium {
         font-size:1.1rem;
@@ -31,6 +32,10 @@
         &:hover {
             background:$mainGreen;
         }
+    }
+
+    &--behance {
+        margin:20px 0;
     }
 
     &--hover-lg-shadow {
