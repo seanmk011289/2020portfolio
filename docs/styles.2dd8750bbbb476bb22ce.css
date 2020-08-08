@@ -71,17 +71,11 @@ ul > li > .primary-nav__last-link {
 .hero-section {
 
     text-align:center;
-    padding: 7rem 0 0 0;
     margin:0;
     position:relative;
     overflow:hidden;
     width:100%; 
 }
-@media (min-width: 800px){
-.hero-section {
-        padding:10rem 0 0 0 
-}
-    }
 .hero-section__top-svg {
         width:100px;
 
@@ -150,11 +144,20 @@ ul > li > .primary-nav__last-link {
         line-height: 3rem;
         display:block;
     }
+@media (min-width:530px) {
+.hero-section__title {
+            font-size:5.5rem;
+            line-height: 5.3rem;
+            letter-spacing: -3px;
+            margin-top:20px;
+            margin-bottom:30px
+    }
+    }
 @media (min-width: 800px){
 .hero-section__title {
             font-size:7.5rem;
-            line-height: 115px;
-            letter-spacing: -5px;
+            line-height: 7.18rem;
+            letter-spacing: -4px;
             margin-top:20px;
             margin-bottom:30px
     }
@@ -285,6 +288,13 @@ ul > li > .primary-nav__last-link {
     padding:2rem;
 
 }
+.wrapper--full-height {
+        height:100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+    }
 .wrapper--extra-padding-mobile {
         padding:2rem 0 4rem 0;
     }

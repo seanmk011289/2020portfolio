@@ -4,7 +4,7 @@ import '../styles/styles.scss'
 import Swup from 'swup';
 
 import Glider from './modules/Glider'
-import HomepageGSAP from './modules/HomepageGSAP'
+import HomepageObserver from './modules/HomepageObserver'
 import HomepageAnimations from './modules/HomepageAnimations'
 import HeroReveal from './modules/HeroReveal';
 import ResumeHero from './modules/ResumeHero';
@@ -58,7 +58,7 @@ function init() {
                 }
             })
 
-        new HomepageGSAP();
+        new HomepageObserver();
         new HomepageAnimations();
         new Glider();
         

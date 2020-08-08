@@ -4,7 +4,7 @@ import  { CSSRulePlugin, TimelineMax } from "gsap/all";
 gsap.registerPlugin(CSSRulePlugin);
 
 
-export default class HomepageGSAP {
+export default class HomepageObserver {
     constructor() {
 
         //DOM ELEMENTS

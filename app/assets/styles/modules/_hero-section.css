@@ -1,15 +1,12 @@
 .hero-section {
 
     text-align:center;
-    padding: 7rem 0 0 0;
     margin:0;
     position:relative;
     overflow:hidden;
     width:100%;
-
-    @mixin atMedium {
-        padding:10rem 0 0 0;
-    }
+    
+    
 
 
     &__top-svg {
@@ -77,10 +74,18 @@
         line-height: 3rem;
         display:block;
 
+        @mixin atSmall {
+            font-size:5.5rem;
+            line-height: 5.3rem;
+            letter-spacing: -3px;
+            margin-top:20px;
+            margin-bottom:30px;
+        }
+
         @mixin atMedium {
             font-size:7.5rem;
-            line-height: 115px;
-            letter-spacing: -5px;
+            line-height: 7.18rem;
+            letter-spacing: -4px;
             margin-top:20px;
             margin-bottom:30px;
 
@@ -150,6 +155,7 @@
         width:3500px;
         z-index:0;
         pointer-events:none;
+        
 
         &-2 {
         position:absolute;
