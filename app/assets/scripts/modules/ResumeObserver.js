@@ -60,7 +60,8 @@ export default class ResumeObserver {
 
     resumeObserver() {
         const options = {
-            rootMargin: '-150px'
+            // rootMargin: '-150px',
+            threshold: .1
         }
 
         let resumePageObserver = new IntersectionObserver(entries => {
@@ -87,9 +88,9 @@ export default class ResumeObserver {
         let aboutTL = new TimelineMax({
         })
 
-        aboutTL.from(this.aboutTitle, {duration:1, y:200, opacity:0, ease:'power3.out'})
-        aboutTL.from(this.aboutSubtitle, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=.5')
-        aboutTL.from(this.aboutLinks, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=.5')
+        aboutTL.fromTo(this.aboutTitle, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'})
+        aboutTL.fromTo(this.aboutSubtitle, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'}, '-=.5')
+        aboutTL.fromTo(this.aboutLinks, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'}, '-=.5')
     }
 
     skillsAnimation() {
@@ -106,11 +107,11 @@ export default class ResumeObserver {
         skillsTL.from(this.skillsSubtitle, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
         skillsTL.to(ruleTwo, {cssRule: {scaleY: 0}, duration: 1, ease: 'power3.out'}, '-=1');
 
-        skillsTL.from(this.skillsOne, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
-        skillsTL.from(this.skillsTwo, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
-        skillsTL.from(this.skillsThree, {duration:1, y:200, opacity:0, ease:'power3.out'}, '-=0.75')
+        skillsTL.fromTo(this.skillsOne, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'}, '-=0.75')
+        skillsTL.fromTo(this.skillsTwo, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'}, '-=0.75')
+        skillsTL.fromTo(this.skillsThree, {y:200, opacity:0}, {duration:1, y:0, opacity:1, ease:'power3.out'}, '-=0.75')
 
-        skillsTL.from(this.skillsButton, {duration:1, opacity:0, ease:'power3.out'})
+        skillsTL.fromTo(this.skillsButton, {opacity:0}, {duration:1, opacity:1, ease:'power3.out'})
 
     }
 
@@ -145,10 +146,10 @@ export default class ResumeObserver {
 
         })
 
-        selfTL.from(this.selfEdTitle, {duration: 1, opacity: 0, y: 100, ease: "ease-out"})
-        selfTL.from(this.selfEdPara1, {duration: 1, opacity: 0, y: 100, ease: "ease-out"})
-        selfTL.from(this.selfEdList, {duration: 1, opacity: 0, y: 100, ease: "ease-out"}, '-=0.5')
-        selfTL.from(this.selfEdPara2, {duration: 1, opacity: 0, y: 100, ease: "ease-out"}, '-=0.5')
+        selfTL.fromTo(this.selfEdTitle, {opacity: 0, y: 100}, {duration: 0.5,  opacity:1, y: 0, ease: "ease-out"})
+        selfTL.from(this.selfEdPara1, {duration: 0.5, opacity: 0, y: 100, ease: "ease-out"})
+        selfTL.from(this.selfEdList, {duration: 0.5, opacity: 0, y: 100, ease: "ease-out"}, '-=0.25')
+        selfTL.from(this.selfEdPara2, {duration: 0.5, opacity: 0, y: 100, ease: "ease-out"}, '-=0.25')
 
     }
 

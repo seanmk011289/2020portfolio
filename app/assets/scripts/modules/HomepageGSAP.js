@@ -54,7 +54,7 @@ export default class HomepageGSAP {
         myWorkObserver() {
 
             const options = {
-                rootMargin: "-150px"
+                threshold:.1
             }
 
             let myWorkObserver = new IntersectionObserver(entries => {
@@ -65,6 +65,7 @@ export default class HomepageGSAP {
                     }
                 })
             }, options)
+
             myWorkObserver.observe(this.myworkSection);
         }
 
@@ -73,28 +74,31 @@ export default class HomepageGSAP {
 
         recentWorkAnimations() {
             
-            gsap.registerPlugin(CSSRulePlugin);
-
             var recentTitle = CSSRulePlugin.getRule(`.recent-work-section__title::after`);
-
+    
             let options = {
                 root:null,
-                rootMargin:'-250px'
+                threshold:.1
             }
-
-            var recentWorkTl = new TimelineMax({});
-
 
             let recentWorkObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-            recentWorkTl.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
-            recentWorkTl.from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
-            recentWorkTl.to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
-            recentWorkTl.from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
-            recentWorkTl.from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
-            recentWorkTl.from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
-                    })
-            })
+                    if(entry.isIntersecting){
+
+                        var recentWorkTl = new TimelineMax({
+                            
+                        });
+
+                        recentWorkTl.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
+                        recentWorkTl.from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
+                        recentWorkTl.to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
+                        recentWorkTl.from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
+                        recentWorkTl.from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+                        recentWorkTl.from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+
+                        }
+                })
+            }, options)
 
             recentWorkObserver.observe(this.recentWorkSection);
 

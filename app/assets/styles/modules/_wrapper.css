@@ -1,6 +1,14 @@
 .wrapper {
     padding:2rem;
 
+    &--extra-padding-mobile {
+        padding:2rem 0 4rem 0;
+
+        @mixin atSmall {
+            padding: 0;
+        }
+    }
+
     &--b-padding {
         padding-bottom:75px;
 
