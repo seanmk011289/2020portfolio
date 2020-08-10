@@ -63,8 +63,8 @@
         
 
         @mixin atSmall {
-            font-size:3.75rem;
-            letter-spacing:-3px;
+            font-size:5rem;
+            letter-spacing:-5px;
             margin:0;
         }
         
@@ -84,7 +84,7 @@
        
 
         @mixin atSmall {
-            font-size:1.8rem;
+            font-size:2.5rem;
             transform:translateY(-20px);
             margin:10px;
         }
