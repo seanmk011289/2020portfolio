@@ -3,9 +3,9 @@ import '../styles/styles.scss'
 
 import Swup from 'swup';
 
-import Glider from './modules/Glider'
-import HomepageObserver from './modules/HomepageObserver'
-import HomepageAnimations from './modules/HomepageAnimations'
+import Glider from './modules/Glider';
+import HomepageObserver from './modules/HomepageObserver';
+import HomepageAnimations from './modules/HomepageAnimations';
 import HeroReveal from './modules/HeroReveal';
 import ResumeHero from './modules/ResumeHero';
 import ResumeObserver from './modules/ResumeObserver';

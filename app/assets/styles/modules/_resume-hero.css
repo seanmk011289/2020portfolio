@@ -55,7 +55,7 @@
 
 
     &__title {
-        font-size:2.75rem;
+        font-size:3rem;
         position:relative;
         z-index:2;
         margin:10px;
@@ -64,7 +64,7 @@
 
         @mixin atSmall {
             font-size:5rem;
-            letter-spacing:-5px;
+            letter-spacing:-3px;
             margin:0;
         }
         
@@ -76,7 +76,7 @@
     }
 
     &__subtitle {
-        font-size:1.4rem;
+        font-size:1.6rem;
         position:relative;
         z-index:2;
         margin:15px;
@@ -109,7 +109,7 @@
         transform:translateY(-20px);
 
         @mixin atMedium {
-            font-size:1.2rem;
+            font-size:1.6rem;
             transform:translateY(0);
         }
     }

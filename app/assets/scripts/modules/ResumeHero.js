@@ -57,13 +57,13 @@ export default class ResumeHero {
     }
 
     resumeCirclesMove() {
-        let moveOne = window.pageYOffset * 0.3;
-        let moveTwo = window.pageYOffset * 0.4;
-        let moveThree = window.pageYOffset * 0.8;
-        let moveFour = window.pageYOffset * 0.8;
-        let moveFive = window.pageYOffset * 0.5;
-        let moveSix = window.pageYOffset * 0.5;
-        let moveSeven = window.pageYOffset * 0.5;
+        let moveOne = window.pageYOffset * -.4;
+        let moveTwo = window.pageYOffset * -.5;
+        let moveThree = window.pageYOffset * -1;
+        let moveFour = window.pageYOffset * -1;
+        let moveFive = window.pageYOffset * -.5;
+        let moveSix = window.pageYOffset * -.5;
+        let moveSeven = window.pageYOffset * -.4;
 
         this.circleOne.style.transform = `translatey(${moveOne}px)`
         this.circleTwo.style.transform = `translatey(${moveTwo}px)`
