@@ -90,11 +90,11 @@ export default class HomepageObserver {
                         });
 
                         recentWorkTl.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
-                        recentWorkTl.from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
-                        recentWorkTl.to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
-                        recentWorkTl.from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
-                        recentWorkTl.from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
-                        recentWorkTl.from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+                        .from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
+                        .to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
+                        .from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
+                        .from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
+                        .from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
 
                         }
                 })

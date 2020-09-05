@@ -1,6 +1,11 @@
 .wrapper {
     padding:2rem;
 
+    &--flex{
+        display:flex;
+        align-items:center;
+    }
+
     &--full-height {
         height:90vh;
         display:flex;
