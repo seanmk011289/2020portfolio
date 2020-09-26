@@ -8,13 +8,19 @@
 
     &--full-height {
         height:90vh;
-        display:flex;
-        justify-content: center;
-        align-items: center;
+        padding:2rem;
 
         @mixin atSmall {
             height:100vh;
+            padding:0;
         }
+    }
+
+    &--flex-center {
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
 
     }
 

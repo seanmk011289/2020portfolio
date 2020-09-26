@@ -1,7 +1,6 @@
 @import 'base/_variables';
 @import 'base/_global';
 @import 'base/_mixins';
-@import 'base/_section';
 @import 'modules/_primary-nav';
 @import 'modules/_site-header';
 @import 'modules/_hero-section';

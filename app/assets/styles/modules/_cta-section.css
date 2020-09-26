@@ -13,7 +13,7 @@
         margin-right:auto;
 
         @mixin atMedium {
-            font-size:3rem;
+            font-size:4rem;
             letter-spacing:-2px;
             max-width:900px;
         }
@@ -61,7 +61,7 @@
     }
 
     &__div-title {
-        font-size:1.5rem;
+        font-size:1.2rem;
         text-transform:uppercase;
 
         @mixin atLarge {

@@ -1,7 +1,8 @@
 import gsap from 'gsap';
-import  { CSSRulePlugin, TimelineMax } from "gsap/all";
+import  {CSSRulePlugin, TimelineMax, ScrollTrigger} from "gsap/all";
+import  { SplitText } from "gsap";
 
-gsap.registerPlugin(CSSRulePlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 
 export default class HomepageObserver {
@@ -16,12 +17,8 @@ export default class HomepageObserver {
 
         //RECENT WORK SECTION 
         this.recentWorkTitle = document.querySelector('.recent-work-section__title');
-        this.recentWorkSubtitle = document.querySelector('.recent-work-section__subtitle');
-        this.recentWorkSection = document.querySelector('.recent-work-section');
-        this.recentWorkGlider = document.querySelector('.recent-work-section__glider');
-        this.recentWorkSection = document.querySelector('.recent-work-section');
-        this.recentWorkSubtitle2 = document.querySelector('.recent-work-section__subtitle2');
-        this.recentWorkBehance = document.querySelector('.recent-work-section__behance-button');
+       
+     
 
         //Blog Elements 
         this.blogSection = document.querySelector('.blog-section');
@@ -36,10 +33,14 @@ export default class HomepageObserver {
         this.CTAs = document.querySelectorAll('.cta-section__flex-item');
         [this.firstCTA, this.secondCTA, this.thirdCTA] = this.CTAs;
 
-        this.myWorkObserver();
+        this.myWorkAnimations();
+
         this.recentWorkAnimations();
+
         this.blogSectionObserver();
+
         this.ctaSectionObserver();
+
         this.events();
     }
 
@@ -51,56 +52,49 @@ export default class HomepageObserver {
 
         //MY WORK Section Animation
 
-        myWorkObserver() {
-
-            const options = {
-                threshold:.1
-            }
-
-            let myWorkObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        gsap.from(this.myworkTitle, { duration:1.5, x:-300, opacity:0, ease: "power3.out"});
-                        gsap.from(this.myworkSubtitle, { duration:1.5, x:300, opacity:0, ease: "power3.out"});
-                    }
-                })
-            }, options)
-
-            myWorkObserver.observe(this.myworkSection);
+        myWorkAnimations() {
+            gsap.from(this.myworkTitle, {  
+                scrollTrigger: {
+                    trigger: this.myworkTitle,
+                    start: "top bottom",
+                    toggleActions: 'restart none none reset'
+                },
+                duration: 1, 
+                y:200, 
+                ease: "power3.out"
+            })
         }
 
 
         //Recent work section animation
 
         recentWorkAnimations() {
-            
-            var recentTitle = CSSRulePlugin.getRule(`.recent-work-section__title::after`);
-    
-            let options = {
-                root:null,
-                threshold:.1
-            }
 
-            let recentWorkObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting){
-
-                        var recentWorkTl = new TimelineMax({
-                            
-                        });
-
-                        recentWorkTl.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
-                        .from(this.recentWorkSubtitle, {duration: 1, y:200, opacity:0, ease: "power3.out"}, '-=1')
-                        .to(recentTitle, {cssRule: {scaleY: 0}, duration: 1}, '-=1')
-                        .from(this.recentWorkGlider, {duration: 1, y:100, opacity:0, ease: 'ease-out'})
-                        .from(this.recentWorkSubtitle2, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
-                        .from(this.recentWorkBehance, {duration: 1, y:100, opacity:0, ease: 'ease-out'}, "-=.5")
-
-                        }
+            gsap.from(this.recentWorkTitle, {  
+                    scrollTrigger: {
+                        trigger: this.recentWorkTitle,
+                        start: "top bottom",
+                        toggleActions: 'restart none none reset'
+                    },
+                    duration: 1, 
+                    y:200, 
+                    ease: "power3.out"
                 })
-            }, options)
+    
+            // let options = {
+            //     root:null,
+            //     threshold:.1
+            // }
 
-            recentWorkObserver.observe(this.recentWorkSection);
+            // let recentWorkObserver = new IntersectionObserver(entries => {
+            //     entries.forEach(entry => {
+            //         if(entry.isIntersecting){
+            //             gsap.from(this.recentWorkTitle, { duration: 1, y:200, ease: "power3.out"})
+            //         }
+            //     })
+            // }, options)
+
+            // recentWorkObserver.observe(this.recentWorkSection);
 
     }
 
