@@ -1,7 +1,6 @@
 .recent-work-section {
     text-align:center;
     position:relative;
-    overflow:hidden;
 
     &__overflow {
         overflow:hidden;
@@ -57,10 +56,14 @@
 
 
     &__title {
-        font-size:3rem;
+        font-size:2.5rem;
         letter-spacing:-2px;
         margin-bottom:20px;
         position:relative;
+
+        @mixin atSmall {
+            font-size:3.5rem;
+        }
 
 
         @mixin atMedium {
@@ -72,7 +75,7 @@
         font-weight:100;
         line-height:2rem;
         margin:0 auto;
-        max-width:600px;
+        max-width:350px;
         
         @mixin atMedium {
             font-size:1.2rem;
@@ -108,14 +111,14 @@
         z-index:2;
 
         &-image {
-           width: 300px;
+           width: 350px;
             display:block;
             margin-left:auto;
             margin-right:auto;
             padding-bottom:50px;
 
             @mixin atSmall {
-                width:400px;
+                width:500px;
             }
 
             @mixin atMedium {
@@ -126,8 +129,8 @@
         &-button-left {
             width:50px;
             position:absolute;
-            left:20px;
-            top:220px;
+            left:370px;
+            top:250px;
 
             @mixin atSmall  {
                 left:20px;
@@ -151,8 +154,8 @@
         &-button-right {
             width:50px;
             position:absolute;
-            right:20px;
-            top:220px;
+            right:370px;
+            top:250px;
 
             @mixin atSmall  {
                 right:20px;

@@ -10,7 +10,7 @@
         height:90vh;
         padding:2rem;
 
-        @mixin atSmall {
+        @mixin atMedium{
             height:100vh;
             padding:0;
         }
