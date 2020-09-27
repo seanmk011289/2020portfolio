@@ -7,7 +7,7 @@
     }
 
     &--full-height {
-        height:90vh;
+        height:100vh;
         padding:2rem;
 
         @mixin atMedium{
@@ -17,6 +17,15 @@
     }
 
     &--cta-section {
+        padding: 4rem 1rem;
+
+        @mixin atMedium{
+            height:100vh;
+            padding:0;
+        }
+    }
+
+    &--skills-section {
         padding: 4rem 0;
 
         @mixin atMedium{

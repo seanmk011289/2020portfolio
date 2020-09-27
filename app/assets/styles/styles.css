@@ -14,6 +14,7 @@
 @import 'modules/_resume-hero';
 @import 'modules/_about-section';
 @import 'modules/_skills-section';
+@import 'modules/_skills-section--home';
 @import 'modules/_experience-section';
 @import 'modules/_self-education';
 @import 'modules/_resume-contact';

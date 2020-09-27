@@ -17,8 +17,10 @@ export default class HomepageObserver {
 
         //RECENT WORK SECTION 
         this.recentWorkTitle = document.querySelector('.recent-work-section__title');
+
+        //RECENT WORK SECTION 
+        this.skillSectionTitle = document.querySelector('.skills-section--home__title');
        
-     
 
         //Blog Elements 
         this.blogSection = document.querySelector('.blog-section');
@@ -36,6 +38,8 @@ export default class HomepageObserver {
         this.myWorkAnimations();
 
         this.recentWorkAnimations();
+
+        this.skillsAnimation();
 
         this.blogSectionObserver();
 
@@ -101,6 +105,19 @@ export default class HomepageObserver {
 
 
     //Blog animations and experiment with a Promise
+
+        skillsAnimation() {
+            gsap.from(this.skillSectionTitle, {  
+                scrollTrigger: {
+                    trigger: this.skillSectionTitle,
+                    start: "top bottom",
+                    toggleActions: 'restart none none reset'
+                },
+                duration: 1, 
+                y:200, 
+                ease: "power3.out"
+            })
+        }
 
 
 
