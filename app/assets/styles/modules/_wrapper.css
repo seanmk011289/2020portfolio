@@ -16,6 +16,15 @@
         }
     }
 
+    &--cta-section {
+        padding: 4rem 0;
+
+        @mixin atMedium{
+            height:100vh;
+            padding:0;
+        }
+    }
+
     &--flex-center {
 
         display:flex;

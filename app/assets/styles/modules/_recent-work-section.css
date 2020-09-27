@@ -1,6 +1,7 @@
 .recent-work-section {
     text-align:center;
     position:relative;
+    overflow:hidden;
 
     &__overflow {
         overflow:hidden;
@@ -131,11 +132,11 @@
             position:absolute;
             left:370px;
             top:250px;
-
+ 
             @mixin atSmall  {
-                left:20px;
-                top:120px;
-            }
+                left:350px;
+                top:330px;
+            } 
            
             @mixin atMedium {
                 left:20px;
@@ -158,8 +159,8 @@
             top:250px;
 
             @mixin atSmall  {
-                right:20px;
-                top:120px;
+                right:350px;
+                top:330px;
             }
 
             @mixin atMedium {
