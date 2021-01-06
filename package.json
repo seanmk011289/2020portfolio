@@ -20,7 +20,7 @@
   "homepage": "https://github.com/seanmk011289/2020portfolio#readme",
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "gsap": "^3.5.1",
     "http-server": "^0.12.3",
     "lazysizes": "^5.1.2",
