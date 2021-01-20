@@ -128,8 +128,6 @@
         }
 
         @mixin atMedium {
-            font-size:7.5rem;
-            line-height: 7.18rem;
             letter-spacing: -4px;
             margin-top:30px;
             margin-bottom:0px;
@@ -157,8 +155,6 @@
         }
 
         @mixin atMedium {
-            font-size:7.5rem;
-            line-height: 7.18rem;
             letter-spacing: -4px;
             margin-bottom:30px;
 

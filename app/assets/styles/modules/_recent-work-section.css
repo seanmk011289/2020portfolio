@@ -3,6 +3,10 @@
     position:relative;
     overflow:hidden;
 
+    @mixin atLarge {
+        padding: 100px 0;
+    }
+
     &__overflow {
         overflow:hidden;
     }
@@ -68,7 +72,7 @@
 
 
         @mixin atMedium {
-            font-size:4.6rem;
+            font-size:4rem;
         }
     }
 
